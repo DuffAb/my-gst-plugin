@@ -3,7 +3,7 @@
  * Copyright (C) 2005 Thomas Vander Stichele <thomas@apestaart.org>
  * Copyright (C) 2005 Ronald S. Bultje <rbultje@ronald.bitfreak.net>
  * Copyright (C) 2019 ldf <<user@hostname.org>>
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
  * to deal in the Software without restriction, including without limitation
@@ -51,8 +51,8 @@
 G_BEGIN_DECLS
 
 /* #defines don't like whitespacey bits */
-#define GST_TYPE_MYFILTER \
-  (gst_my_filter_get_type())
+/* Standard macros for defining types for this element.  */
+#define GST_TYPE_MYFILTER (gst_my_filter_get_type())
 #define GST_MYFILTER(obj) \
   (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_MYFILTER,GstMyFilter))
 #define GST_MYFILTER_CLASS(klass) \
@@ -74,11 +74,13 @@ struct _GstMyFilter
   gboolean silent;
 };
 
-struct _GstMyFilterClass 
+/* Standard definition defining a class for this element. */
+struct _GstMyFilterClass
 {
   GstElementClass parent_class;
 };
 
+/* Standard function returning type information. */
 GType gst_my_filter_get_type (void);
 
 G_END_DECLS
